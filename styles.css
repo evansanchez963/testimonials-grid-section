@@ -1,0 +1,111 @@
+/* Challenge starts here! */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+:root {
+    /* Primary Colors */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Neutral Colors */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    --fs-default: 0.8125rem;
+    --fw-default: 500;
+    --fw-bold: 600;
+}
+
+body {
+    background-color: var(--light-gray);
+    min-height: 100vh;
+
+    padding: 2rem;
+    font-size: var(--fs-default);
+    font-family: "Barlow Semi Condensed", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    max-width: 75rem;
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+}
+
+.testimonial {
+    background-color: gray;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial__profile {
+    display: grid;
+}
+
+.testimonial.daniel{
+    grid-column: 1 / 3;
+}
+
+.testimonial.kira {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+}
+
+.testimonial.patrick {
+    grid-column: 2 / 4;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        width: 95%;
+    }
+    .testimonial.kira {
+        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        margin-top: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+    .testimonial {
+        grid-column: unset !important;
+        grid-row: unset !important;
+    }
+}
